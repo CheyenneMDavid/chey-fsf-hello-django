@@ -3,7 +3,6 @@ import os
 
 import dj_database_url
 
-import env
 
 """
 Django settings for django_todo project.
@@ -25,10 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (
-    "django-insecure-v+^t-=qvacl5jyo$3rs(abl+9q5x_@i@r8#l^+wl4n-xtp$tp1"
-)
+
+# Default value for SECRET_KEY (used during local development)
+SECRET_KEY = "default-development-secret-key"
+
+
+# (on Heroku, for example), use its value
+if "SECRET_KEY" in os.environ:
+    SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
