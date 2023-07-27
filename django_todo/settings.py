@@ -3,7 +3,8 @@ import os
 import dj_database_url
 import env
 
-
+if os.path.isfile("env.py"):
+    import env
 """
 Django settings for django_todo project.
 
@@ -36,7 +37,7 @@ if "SECRET_KEY" in os.environ:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-cheyennemda-cheyfsfhell-o9tups2qexr.ws-eu102.gitpod.io"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
