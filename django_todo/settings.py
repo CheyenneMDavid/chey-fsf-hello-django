@@ -26,13 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# Default value for SECRET_KEY (used during local development)
+
+SECRET_KEY = os.environ.get("SECRET_KEY", "default-development-secret-key")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["cheys2do-with-django-c419806edb7b.herokuapp.com/"]
+ALLOWED_HOSTS = ["cheys2do-with-django-c419806edb7b.herokuapp.com"]
 
 
 # Application definition
