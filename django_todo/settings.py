@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Default value for SECRET_KEY (used during local development)
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "default-development-secret-key")
+SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
