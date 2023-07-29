@@ -30,14 +30,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Default value for SECRET_KEY (used during local development)
 
-SECRET_KEY = "default-development-secret-key"
+SECRET_KEY = os.environ.get("SECRET_KEY", "default-development-secret-key")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["cheys2do-with-django-c419806edb7b.herokuapp.com"]
+ALLOWED_HOSTS = [
+    os.environ.get("cheys2do-with-django-c419806edb7b.herokuapp.com")
+]
 
 # Application definition
 
